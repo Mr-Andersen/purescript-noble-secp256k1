@@ -1,1 +1,1 @@
-exports.randomBytes = x => new Uint8Array(crypto.randomBytes(x));
+export const randomBytes = x => new Uint8Array(crypto.randomBytes(x));

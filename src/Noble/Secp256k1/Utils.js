@@ -1,10 +1,10 @@
-const lib = require("@noble/secp256k1");
+import * as lib from "@noble/secp256k1";
 
-exports.randomPrivateKey = () => lib.utils.randomPrivateKey();
+export const randomPrivateKey = () => lib.utils.randomPrivateKey();
 
-exports._sha256 = bytes => () => lib.utils.sha256(bytes);
+export const _sha256 = bytes => () => lib.utils.sha256(bytes);
 
-exports._hashToPrivateKey = nothing => just => bytes => {
+export const _hashToPrivateKey = nothing => just => bytes => {
   try {
     return just(lib.utils.hashToPrivateKey(bytes));
   } catch (_) {
@@ -12,4 +12,4 @@ exports._hashToPrivateKey = nothing => just => bytes => {
   }
 };
 
-exports.isValidPrivateKey = lib.utils.isValidPrivateKey;
+export const isValidPrivateKey = lib.utils.isValidPrivateKey;
